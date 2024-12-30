@@ -1,15 +1,20 @@
-import React from 'react'
-import {BrowserRouter,Routes,Route} from "react-router-dom"
-import Landing from "./components/Landing"
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Landing from "./components/Landing";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Landing/>}/>
-      </Routes>
-    </BrowserRouter>
-  )
-}
+    <div className="w-full h-screen">
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/start" element={<Landing />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+};
 
-export default App
+export default App;
